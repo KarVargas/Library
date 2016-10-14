@@ -20,4 +20,17 @@ public class Node <T>{
         this.data = data;
         this.next = null;
     }
+    //Methods
+    public T getData() {
+        return this.data;
+    }
+    public Node getNext() {
+        return this.next;
+    }
+    public void setData(T data) {
+        this.data = data;
+    }
+    public void setNext(Node next) {
+        this.next = next;
+    }
 }

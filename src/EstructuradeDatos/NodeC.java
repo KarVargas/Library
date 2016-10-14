@@ -15,7 +15,7 @@ public class NodeC <T> {
     T data;
     
     //Methods
-    //Cosntructor con dato
+    //Constructor con dato
     /**
      * 
      * @param data 
