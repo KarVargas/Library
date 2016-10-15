@@ -77,7 +77,7 @@ public class stackList <T> {
                 System.out.println("|");
                 System.out.println("V");
                 t = t.getNext();
-            } while(t.getNext()!=null);
+            } while(t!=null);
             System.out.println("☠");
         }
     }
