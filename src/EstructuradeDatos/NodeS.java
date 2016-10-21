@@ -18,20 +18,16 @@ public class NodeS <T> {
     public NodeS (T data) {
         this.data = data;
         this.next = null;
-    }
-    
+    }   
     public void setData (T data) {
         this.data = data;
-    }
-    
+    }    
     public T getData() {
         return this.data;
     }
-
     public NodeS getNext() {
         return next;
     }
-
     public void setNext(NodeS n) {
         this.next = n;
     }

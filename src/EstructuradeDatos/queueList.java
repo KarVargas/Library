@@ -48,22 +48,22 @@ public class queueList <T> {
     public void insertLast(T data) {
         Node node = new Node(data);
         if(isEmpty()) {
-            this.first = node;
-            this.last = node;
+            setFirst(node); //this.first = node;
+            setLast(node); //this.last = node;
         } else {
             node.setNext(last);
-            last = node;
+            setLast(node); //last = node;
         } ++this.size;
     }
     public void deleteFirst(){
         Node t;
         if (!isEmpty()){
            t = last;
-           while (t.getNext()!=first) {
+           while (t.getNext() != first) {
                t = t.getNext(); //t = t.next;
            }
            t.setNext(null);
-           first = t;
+           setFirst(t); //first = t;
            --this.size;
         } else {
             System.out.print("La lista está vacía");
@@ -73,9 +73,9 @@ public class queueList <T> {
         return this.first == null;
     }
     public void setEmpty(){
-        this.first = null;
-        this.last = null;
-        this.size = 0;
+        setFirst(null); //this.first = null;
+        setLast(null); //this.last = null;
+        setSize(0); //this.size = 0;
     }
     
     

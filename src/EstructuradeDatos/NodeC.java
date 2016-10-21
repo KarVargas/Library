@@ -24,7 +24,6 @@ public class NodeC <T> {
         this.data = data;
         this.next = null;
     }
-    
     //Contructor nulo
     /**
      * 

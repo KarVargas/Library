@@ -10,23 +10,30 @@ package EstructuradeDatos;
  * @author CarlosManuel
  */
 public class Node <T>{
-    T data;
-    Node next;
+    //Attributes
+    T data; //Declaramos una variable "data" de cualquier tipo por ser generica.
+    Node next; //Declaramos una variable "next" de tipo nodeClass, mismo nombre de la clase.
+    //Methods
     /**
-     * Constructor 
-     * @param data 
+     * Método es el constructor de la clase con sus respectivas variables.
+     * @param data es de tipo generico y contiene la información importante.
      */
     public Node (T data) {
-        this.data = data;
-        this.next = null;
+        this.data = data; //Inicializamos en que data es igual a data.
+        this.next = null; //Inicializamos en que next es igual a null o vacío.
     }
-    //Methods
+    public Node () {
+        this.data = data; //Inicializamos en que data es igual a data.
+        this.next = null; //Inicializamos en que next es igual a null o vacío.
+    }
+    //Getters
     public T getData() {
         return this.data;
     }
     public Node getNext() {
         return this.next;
     }
+    //Setters
     public void setData(T data) {
         this.data = data;
     }

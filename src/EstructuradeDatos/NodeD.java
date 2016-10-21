@@ -15,6 +15,7 @@ public class NodeD <T> {
     NodeD next;
     NodeD prev;
     //Methods
+    //Constructor
     /**
      * Este método es el constructor.
      * @param data es la información importante.
@@ -23,5 +24,28 @@ public class NodeD <T> {
         this.data = data;
         this.next = null;
         this.prev = null;
+    }
+    public NodeD(){
+        this.data = data;
+        this.next = null;
+        this.prev = null;
+    }
+    public T getData(){
+        return this.data;
+    }
+    public NodeD getNext() {
+        return next;
+    }
+    public NodeD getPrev() {
+        return prev;
+    }
+    public void setData(T d){
+        this.data = d;
+    }
+    public void setNext(NodeD next) {
+        this.next = next;
+    }
+    public void setPrev(NodeD prev) {
+        this.prev = prev;
     }
 }

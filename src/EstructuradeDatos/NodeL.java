@@ -11,8 +11,8 @@ package EstructuradeDatos;
  */
 public class NodeL <T> {
     //Attributes
-    T data; //Declaramos una variable "data" de cualquier tipo por ser generica.
-    NodeL next; //Declaramos una variable "next" de tipo nodeClass, mismo nombre de la clase.
+    protected T data; //Declaramos una variable "data" de cualquier tipo por ser generica.
+    protected NodeL next; //Declaramos una variable "next" de tipo nodeClass, mismo nombre de la clase.
     
     //Methods
     /**
@@ -22,5 +22,17 @@ public class NodeL <T> {
     public NodeL(T data){
         this.data = data; //Inicializamos en que data es igual a data.
         this.next = null; //Inicializamos en que next es igual a null o vacío.
+    }
+    public T getData() {
+        return data;
+    }
+    public NodeL getNext() {
+        return next;
+    }
+    public void setData(T data) {
+        this.data = data;
+    }
+    public void setNext(NodeL next) {
+        this.next = next;
     }
 }

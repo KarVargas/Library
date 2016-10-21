@@ -11,9 +11,10 @@ package EstructuradeDatos;
  */
 public class stackList <T> {
     //Attribures
-    private NodeS top;
+    private Node top;
     private int size;
     
+    //Methods
     //Constructor
     public stackList() {
         this.top = null;
@@ -24,7 +25,7 @@ public class stackList <T> {
      * 
      * @return stack's top
      */
-    public NodeS getTop(){
+    public Node getTop(){
         return this.top;
     }
     /**
@@ -34,6 +35,13 @@ public class stackList <T> {
     public int getSize(){
         return this.size;
     }
+    //Setters
+    public void setTop(Node top) {
+        this.top = top;
+    }
+    public void setSize(int size) {
+        this.size = size;
+    }    
     public boolean isEmpty(){
         return this.top == null;
     }
@@ -42,20 +50,23 @@ public class stackList <T> {
      * @param data node's info
      */
     public void push (T data) {
-        NodeS node = new NodeS (data);
+        Node node = new Node (data);
         if (isEmpty()) { //Si la pila está vacía.
-            top = node;
+            setTop(node);
+                //top = node;
         } else { //Si la pila no está vacía.
             node.setNext(top);
-            top = node;
+            setTop(node);
+                //top = node;
         } ++size;
     }
     /**
-     * elimina un elemento de la pila.
+     * Elimina un elemento de la pila.
      */
     public void pop() {
         if (!isEmpty()) {
-            top = top.getNext();
+            setTop(top.getNext());
+                //top = top.getNext();
             --size;
         } else { 
             System.out.println("La pila está vacía");
@@ -65,19 +76,21 @@ public class stackList <T> {
      * Vacía los elementos de la pila.
      */
     public void empty(){
-        top = null;
-        size = 0;
+        setTop(null);
+            //top = null;
+        setSize(0);
+            //size = 0;
     }
     
     public void showStack() {
         if (!isEmpty()){
-            NodeS t = top;
+            Node t = top;
             do {
                 System.out.println(t.getData());
                 System.out.println("|");
                 System.out.println("V");
                 t = t.getNext();
-            } while(t!=null);
+            } while(t != null);
             System.out.println("☠");
         }
     }
