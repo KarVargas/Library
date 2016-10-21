@@ -137,20 +137,28 @@ public class doubleList <T> {
      */
     public void deleteFirst(){
         //Movemos al apuntador first al siguiente nodo y el previo de este lo ponemos null
-        setFirst(first.getNext());
-            //first = first.next; //Inicializamos first con el apuntador "SIGUIENTE" de first, para que así first pase a su apuntador y olvide el nodo en el que se encontraba.
-        first.setPrev(null);
-            //first.prev = null;
+        if(!isEmpty()){
+            setFirst(first.getNext());
+                //first = first.next; //Inicializamos first con el apuntador "SIGUIENTE" de first, para que así first pase a su apuntador y olvide el nodo en el que se encontraba.
+            first.setPrev(null);
+                //first.prev = null;
+        } else {
+            System.out.println("La lista está vacía.");
+        }
     }
     /**
      * Este método elimina el nodo que se encuentra al final de la lista.
      */
     public void deleteLast(){
         //Movemos al apuntador last al nodo anterior y el next de este ultimo lo ponemos a null
-        setLast(last.getPrev());
-            //last = last.prev; //Inicializamos last con el apuntador "ANTERIOR" de last, para que así last pase a su apuntador y olvide el nodo en el que se encontraba.
-        last.setNext(null);
-            //last.next = null;
+        if(!isEmpty()){
+            setLast(last.getPrev());
+                //last = last.prev; //Inicializamos last con el apuntador "ANTERIOR" de last, para que así last pase a su apuntador y olvide el nodo en el que se encontraba.
+            last.setNext(null);
+                //last.next = null;
+        } else {
+            System.out.println("La lista está vacía.");
+        }
     }
     /**
      * Este método muestra la lista completa con nodos en el caso de tener, por el contrario, te arroja un comentario diciendote que la lista está vacía.

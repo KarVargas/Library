@@ -93,13 +93,15 @@ public class linealList <T> {
     public void deletel(){
         Node node = first; //Declaramos una variable "node" de tipo nodeClass, mismo nombre de la clase principal. Inicializamos node con first.
         Node prev = null; //Declaramos una variable "prev" de tipo nodeClass, mismo nombre de la clase principal. Inicializamos prev a null.
-        while(node.next!=null){ //Ciclo para verificar el apuntador de node es diferente de null.
+        while(node.next != null) { //Ciclo para verificar el apuntador de node es diferente de null.
             prev = node; //De ser asi el siguiente puntero es igual a node
             node = node.next;//Mientras que node es igua a node.next, de esta forma se va
             //verificando si lo que sigue del ultimo nodo es igual a null, se elimina
         }
-        last = prev;
-        prev.next = null;
+        setLast(prev);
+            //last = prev;
+        prev.setNext(null);
+            //prev.next = null;
     }
     
     public void deleteLast(){
@@ -165,7 +167,7 @@ public class linealList <T> {
                 deleteLast();
                 return true;
             } else {
-                while (t.getNext()!=null && t.getNext().getData()!=data && !data.equals(t.getNext().getData())/*!data.equals(t.data) && t != null && t.data != data*/) { //Mientras que no encuentre el dato o no llegue al final de la lista, recorre la lista.
+                while (t.getNext() != null && t.getNext().getData() != data && !data.equals(t.getNext().getData())/*!data.equals(t.data) && t != null && t.data != data*/) { //Mientras que no encuentre el dato o no llegue al final de la lista, recorre la lista.
                     //t2 = t;
                     t = t.getNext(); 
                         //t = t.next; //Recorre la lista.
