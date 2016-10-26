@@ -21,6 +21,10 @@ public class linealList <T> {
     public Node getLast() {
         return last;
     }
+    public T getData(){
+        T data = null;
+        return data;
+    }
     //Setters
     public void setFirst(Node first) {
         this.first = first;
@@ -123,7 +127,7 @@ public class linealList <T> {
      * 
      * @return 
      */
-    private boolean isEmpty(){
+    public boolean isEmpty(){
         return first == null;
     }
     /**
@@ -158,11 +162,11 @@ public class linealList <T> {
             Node t, t2;
             t = first; //Colocamos auxiliar al inicio de la lista.
             t2 = null;
-            if(getFirst().getData().equals(data)){
+            if(getFirst().getData().equals(data) || first.getData() == data){
                 //(first.getData().equals(data)){
                 deleteFirst();
                 return true;
-            } else if(getLast().getData().equals(data)){
+            } else if(getLast().getData().equals(data) || last.getData() == data){
                 //(last.getData().equals(data)){
                 deleteLast();
                 return true;
@@ -176,7 +180,7 @@ public class linealList <T> {
                     t.setNext(t.getNext().getNext());
                     return true;
                 }
-                System.out.println("No se encontró en la lista.");
+                //System.out.println("No se encontró en la lista.");
                 return false;
                 //if (t == null) { return false; } // No lo encontro
                 /*if(t == first){
